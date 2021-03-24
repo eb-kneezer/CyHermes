@@ -1,38 +1,479 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	font-size: 11px;
+	font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+	--grey: rgba(222, 228, 235, 0.452);
+	--yellow: rgb(255, 196, 0);
+	--yellowfaded: ;
+	--green: rgb(2, 216, 116);
+	--greenfaded: rgba(0, 223, 119, 0.13);
+	--blue: #46a5ff;
+	--bluefaded: #46a6ff3b;
+	--red: rgb(216, 9, 2);
+	--textcolor: #000000b9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.page {
+	display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+/* -----------------SIDE---------------- */
+.side-page {
+	width: 20%;
+	height: 100vh;
+	background-color: var(--grey);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons {
+	display: flex;
+	width: 100%;
+	height: 60px;
+}
+.iconbox {
+	width: 60px;
+	height: 60px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.iconbox img {
+	width: 20px;
+}
+.bars {
+	background-color: #0e0501;
+}
+.nine-dots {
+	width: 70px;
+}
+.nine-dots img {
+	width: 30px;
+}
+.sunbeam {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.sunbeam:hover {
+	background-color: rgba(224, 224, 224, 0.527);
+}
+.sunbeam img {
+	width: 50px;
+}
+
+/* -------------------- */
+
+.side-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: calc(100vh - 60px);
+}
+.side-head {
+	color: #a3a3a3;
+	letter-spacing: 0.5px;
+}
+
+.status-list {
+	font-size: 12px;
+	margin-top: 80px;
+	padding: 0 40px;
+	display: flex;
+	flex-direction: column;
+	color: var(--textcolor);
+}
+.status-list h3 {
+	margin-top: 10px;
+	cursor: pointer;
+}
+.status-list .new {
+	color: var(--blue);
+}
+.status-list .accepted:hover {
+	color: var(--green);
+}
+.status-list .flagged:hover {
+	color: var(--yellow);
+}
+.status-list .not-accepted:hover {
+	color: var(--red);
+}
+
+/* ---------------------- */
+
+.most-recent {
+	padding: 15px;
+	/* margin-top: 120px; */
+}
+.most-recent h3 {
+	margin-left: 25px;
+	margin-bottom: 5px;
+}
+.recent {
+	font-size: 10px;
+	font-weight: bold;
+	width: 100%;
+	padding: 10px 25px;
+	background-color: #fff;
+	color: var(--textcolor);
+	border-radius: 7px;
+	position: relative;
+	box-shadow: -8px 30px 38px -12px rgba(101, 178, 255, 0.199);
+}
+.recent::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--yellow);
+	width: 2px;
+	height: 80%;
+}
+.recent .regulator {
+	margin-bottom: 10px;
+}
+p.recent-head {
+	color: #a3a3a3;
+}
+.recent-content {
+	line-height: 13px;
+}
+.recent .status {
+	display: inline-block;
+	background-color: rgba(255, 196, 0, 0.397);
+	border-radius: 20px;
+	border: none;
+	padding: 6px 12px;
+	margin-top: 7px;
+}
+
+/* ----------------------------- */
+
+.footer {
+	position: relative;
+	margin: 10px 40px;
+	font-weight: 600;
+}
+.footerImg {
+	width: 12px;
+}
+.reg {
+	position: absolute;
+	padding-top: 3px;
+}
+
+/* -----------MAIN------------- */
+
+.main-page {
+	width: 80%;
+}
+
+.profile {
+	height: 50px;
+	padding: 15px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+/* .profile img {
+	width: 30px;
+	margin-right: auto;
+	display: none;
+} */
+.notify {
+	width: 35px;
+	height: 35px;
+	padding: 7px;
+	border-radius: 50%;
+	position: relative;
+	cursor: pointer;
+}
+.notify::after {
+	content: "";
+	position: absolute;
+	top: 3px;
+	left: 20px;
+	background-color: var(--red);
+	height: 7px;
+	width: 7px;
+	border-radius: 50%;
+}
+.notify:hover {
+	background-color: rgba(224, 224, 224, 0.336);
+}
+.notify:active {
+	background-color: rgba(224, 224, 224, 0.575);
+}
+.notify img {
+	width: 100%;
+}
+span.administrator {
+	padding: 3px 10px;
+	color: var(--blue);
+	background-color: var(--bluefaded);
+	margin-left: 30px;
+	font-weight: bold;
+	border-radius: 20px;
+}
+.user {
+	width: 35px;
+	height: 35px;
+	margin-left: 20px;
+	position: relative;
+	cursor: pointer;
+}
+.user img {
+	border-radius: 50%;
+	width: 100%;
+}
+.user::after {
+	content: "";
+	position: absolute;
+	bottom: 2px;
+	right: 2px;
+	height: 7px;
+	width: 7px;
+	border: 3px solid #fff;
+	border-radius: 50%;
+	background-color: var(--green);
+}
+
+/* --------------------------- */
+
+.container {
+	max-width: 800px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.search-container {
+	display: flex;
+	width: 100%;
+	margin-top: 5px;
+}
+.search-container i {
+	width: 5%;
+	font-size: 20px;
+	padding: 12px 20px;
+	background-color: var(--grey);
+	border-radius: 3px 0 0 3px;
+}
+input {
+	width: 95%;
+	padding: 10px;
+	outline: none;
+	background-color: var(--grey);
+	border: none;
+	border-radius: 0px 3px 3px 0;
+}
+
+/* -------------------- */
+
+.head-container {
+	padding: 15px 0 15px 15px;
+}
+.head-container p {
+	color: var(--textcolor);
+	font-size: 12px;
+}
+.main-heading {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.heading {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+}
+.heading h1 {
+	font-size: 26px;
+}
+span.head-report {
+	font-size: 11px;
+	font-weight: bold;
+	padding: 1px 4px;
+	border-radius: 10px;
+	color: rgb(2, 216, 116);
+	background-color: var(--greenfaded);
+}
+
+.action {
+	display: flex;
+	font-weight: bold;
+	color: var(--blue);
+}
+.archive {
+	display: flex;
+	align-items: center;
+	margin-right: 30px;
+	padding: 0 7px;
+	border: 1px solid transparent;
+	border-radius: 7px;
+	cursor: pointer;
+}
+.archive:hover {
+	border: 1px solid var(--blue);
+}
+.archive img {
+	width: 15px;
+	height: 15px;
+	margin-right: 15px;
+}
+.archive p {
+	font-size: 11px;
+	color: var(--blue);
+}
+
+button.create {
+	padding: 7px 15px;
+	font-weight: bold;
+	font-size: 11px;
+	font-family: "Poppins";
+	background-color: var(--yellow);
+	outline: none;
+	border: none;
+	border-radius: 7px;
+	cursor: pointer;
+}
+button.create:hover {
+	background-color: #000;
+	color: rgb(255, 196, 0);
+}
+button.create:active {
+	background-color: #000;
+	color: rgba(255, 196, 0, 0.603);
+}
+
+/* ------------------------ */
+
+.reports {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+	width: 100%;
+	padding: 0 10px 0 30px;
+	border-radius: 7px;
+	margin-bottom: 15px;
+	color: var(--textcolor);
+	border: 1px solid transparent;
+	box-shadow: -8px 30px 38px -12px rgba(101, 178, 255, 0.199);
+}
+.reports::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: var(--yellow);
+	width: 2px;
+	height: 80%;
+}
+
+.details > div {
+	width: 210px;
+	padding: 10px 0;
+}
+.details {
+	font-size: 11px;
+	font-weight: bold;
+	line-height: 15px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.report-headings {
+	color: #a3a3a3;
+}
+
+.report-status {
+	font-size: 10px;
+	font-weight: 400;
+	display: flex;
+	align-items: center;
+}
+
+span.accepted {
+	font-weight: bold;
+	padding: 7px 14px;
+	border-radius: 20px;
+	margin-right: 20px;
+	color: var(--green);
+	background-color: var(--greenfaded);
+}
+
+.view-details {
+	font-weight: bold;
+	color: var(--blue);
+	display: flex;
+	justify-content: flex-end;
+	width: 45%;
+	height: 20px;
+	margin: 15px 0;
+}
+
+.view-details i {
+	color: var(--textcolor);
+	font-size: 17px;
+	height: 20px;
+	width: 20px;
+	padding: 1px 5px;
+	margin-left: 10px;
+	cursor: pointer;
+}
+.view-details i:hover {
+	background-color: rgba(224, 224, 224, 0.336);
+}
+
+.reports:nth-of-type(2n) {
+	background-color: var(--grey);
+	box-shadow: none;
+	border: 1px solid #a3a3a344;
+}
+.reports:nth-of-type(2n)::before {
+	background-color: #a3a3a3;
+}
+
+@media screen and (max-width: 800px) {
+	.most-recent {
+		display: none;
+	}
+
+	.main-page {
+		width: 100%;
+	}
+	.profile img {
+		display: block;
+		cursor: pointer;
+	}
+	.page {
+		position: relative;
+	}
+
+	.side-page {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 40%;
+	}
+
+	.side-page.active {
+		background-color: #a3a3a3;
+		display: block;
+	}
 }
