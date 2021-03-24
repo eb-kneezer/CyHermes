@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ninedots from '../assets/ninedots.png'
+// import ninedots from '../assets/ninedots.png'
 import notify from '../assets/notify.png'
 import User from '../assets/User.jpg'
 
